@@ -1,0 +1,151 @@
+
+
+Common Steps Across All Platforms
+
+1. Ensure Python & pip are installed;
+   Open a terminal (or Command Prompt on Windows) and run:
+
+   python --version
+   pip --version
+
+   This checks the version of Python and pip (Python's package installer) to ensure they are installed. If these commands fail, Python or pip may need to be installed or fixed.
+
+   1.1 If Python or pip are not installed:
+      
+      Installing Python
+
+      Windows
+
+      Download the Python Installer:
+      - Visit the official Python website at [python.org](https://www.python.org/downloads/).
+      - Download the latest Python installer for Windows (make sure to select the option that matches your architecture, such as 64-bit or 32-bit).
+
+      Run the Installer:
+      - Open the downloaded file to start the installation.
+      - Important: Ensure you check the box that says “Add Python to PATH” at the beginning of the installation process.
+      - Click on “Install Now” and follow the instructions to complete the installation.
+
+      Verify Installation:
+      - Open Command Prompt (`Win + R`, type `cmd`, and press Enter).
+      - Type `python --version` and `pip --version` to confirm that Python and pip are installed correctly.
+
+      Linux
+
+      Most Linux distributions come with Python pre-installed. However, it may not be the latest version, and pip might need to be installed separately.
+
+      Install Python:
+      - Open a terminal window.
+      - For Debian-based distributions like Ubuntu, use:
+
+        sudo apt update
+        sudo apt install python3 python3-pip
+
+      - For Red Hat-based distributions like Fedora, use:
+
+        sudo dnf install python3 python3-pip
+
+
+      Verify Installation:
+      - Check Python and pip versions:
+    
+        python3 --version
+        pip3 --version
+
+      macOS
+
+      macOS typically comes with Python 2.7 pre-installed, but for development, Python 3.x is recommended.
+
+      Install Python via Homebrew (a package manager for macOS):
+      - First, install Homebrew by pasting the following command in a Terminal window (find Terminal in Applications/Utilities):
+     
+     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+     
+      - After installing Homebrew, install Python 3:
+     
+     brew install python
+
+      Verify Installation**:
+      - In the Terminal, type:
+
+     python3 --version
+     pip3 --version
+
+
+2. Install Jupyter Notebook:
+   It's recommended to install Jupyter globally to avoid issues with virtual environment paths, especially on Windows. Run:
+   
+   pip install notebook
+
+
+Setting Up a Virtual Environment
+
+Windows
+
+1. Open Command Prompt:
+   - Press `Win + R`, type `cmd`, and press Enter.
+
+2. Create a Virtual Environment:
+   - Navigate to your project directory:
+ 
+     cd path\to\your\project
+
+   - Create a virtual environment named `env`:
+
+     python -m venv env
+
+3. Activate the Virtual Environment:
+
+   .\env\Scripts\activate
+
+4. Install Required Packages:
+   - Ensure your virtual environment is activated (you should see `(env)` before the command prompt).
+   - Install any required packages using pip. For example:
+
+     pip install numpy pandas matplotlib
+
+
+5. Start Jupyter Notebook:
+
+   jupyter notebook
+
+
+Linux / macOS
+
+1. Open a Terminal Window:
+   - You can typically find this in your applications menu or utilities folder.
+
+2. Create a Virtual Environment:
+   - Navigate to your project directory:
+
+     cd path/to/your/project
+
+   - Create a virtual environment named `env`:
+
+     python3 -m venv env
+
+
+3. Activate the Virtual Environment:
+
+   source env/bin/activate
+
+
+4. Install Required Packages:
+   - Ensure your virtual environment is activated (you should see `(env)` before the command prompt).
+   - Install any required packages using pip. For example:
+
+     pip install numpy pandas matplotlib
+
+
+5. Start Jupyter Notebook:
+
+   jupyter notebook
+ 
+General Notes
+
+- Deactivating the Virtual Environment: 
+   To deactivate the virtual environment and return to your system’s default Python interpreter, simply run:
+
+  deactivate
+
+- Managing Packages: If you need additional Python packages, install them while the virtual environment is activated using `pip install requirements.txt`.
+- Accessing Notebooks: Jupyter Notebook will start in your default browser. You can create new notebooks or open existing ones from the directory you started Jupyter in.
